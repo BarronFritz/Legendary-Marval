@@ -1,0 +1,69 @@
+Game Design Document for
+Legendary Marval
+
+1. Game Overview
+
+
+	Game Title: Legendary Marval
+	Genre: Cooperative Deck-Building Card Game
+	Target Audience:(14+ Moderate to Difficult)
+    Platform: PC
+    Engine: Godot
+    Online Features: Up to 5-player Co-op multiplayer
+
+2. Core Gameplay Mechanics
+
+    Game Objective: Players must work together to successfully attack the Mastermind four times! In addition, defeating villains before they wreck the city then escape and rescuing bystanders earns you Victory Points. If the players defeat the Mastermind, then the player with the most Victory Points is the most legendary hero of all.
+    Turn Structure: On your turn you do 3 things:
+		1) Play the top card of the Villain Deck and resolve any potential effects.
+		2) Play cards from your hand, using them to recruit from HQ and fight Villains.
+		3) Discard your hand and draw 6 new cards.
+    Card System: Several types of cards: Starter cards for each player, Hero cards you can spend resources to add to your deck, Villain cards to defeat for Victory points, Bystander cards to collect for Victory Points, Wounds cards which slow you down by adding cards with no effects to your deck, Mastermind cards are the main objective of the game, Scheme cards set the victory and defeat conditions and add unique events and things for the player to deal with(i.e. discard cards from the hero deck, or add wounds to player deck, etc.)
+    Deck Building Mechanics: How do players acquire new cards? Players play cards from heir hands with Recruit Points(denoted by a number in a star near the lower left of the card) Spend Recruit Points to acquire hero cards from the HQ and add them to your Hero Deck. Note: Unspent Recruit Points are lost at the end of the turn
+    Cooperative Elements: Players work together by synergizing the types of heroes they recruit so everybody is able to build a deck powerful enough to take on the Mastermind before the Villains take over the city
+    Resource Management: Players need to manage how many Recruit Points and Attack Points their deck can generate on average along with deck size so they can play their powerful cards more often.
+
+3. Game Flow & Player Experience
+
+    Game Phases: Setup can be done at random per the game instructions or hand tailored for specific challenges or easier setups, Gameplay, Endgame conditions
+    Progression System: With some practice you can create some very reliably powerful Hero Decks to take on the Mastermind
+    Replayability Features: Randomized elements allow for hundreds of combinations of battles between heroes, villains, henchmen, and the scheme cooked up by the Mastermind.
+
+4. Multiplayer & Online Functionality
+
+    Lobby & Matchmaking System: How do players connect?
+    Turn-Based or Real-Time?: This is a turn based game. When it's not a player's turn they should be able to view all cards face-up on the field to plan their next turn. Players should be allowed to toggle open-face hands to simplify turn coordination
+    Player Communication: Chat, emotes, pings, stickers
+    Hosting Model: Peer-to-peer or dedicated server?
+
+5. User Interface & Experience (UI/UX)
+
+    Game Board Layout: Player areas, personal draw and discard piles; shared play area, Villain area, Hero HQ, K.O piles, Shield Officers cards, Wounds cards, Bystandards cards;discard piles, etc.
+    Card Display: Officers, Wounds, and Bystander card piles are face-up and limited in nature, when they run out the game continues but players no longer gain these when they normally would; Villain Deck is face down, each turn starts with one of these being revealed; Hero Deck is face down, the HQ is always staffed by 5 Heroes, as soon as a Hero is Recruited or K.O.'ed from the HQ a new Hero is immediately revealed from the Hero Deck if available; Mastermind is faceup, but under them is their 4 Mastermind Tactics cards(a reward or event drawn at random for the players to deal with) the player that attacked the mastermind wins the tactics card which is worth several Victory Points!
+    HUD Elements: Resource counters, turn indicators, Hero Deck and Villain Deck counters, Mastermind Tactics counter, K.O. counters, Scheme Twist counter
+
+6. Art & Audio
+
+    Visual Style: 2D card art and maybe a traditional comic style font
+    Card Design: full picture cards, large readable numbers, Hero team icons, Hero Classes
+    Sound & Music: 
+
+7. Technical Considerations
+
+    Godot Version: 4.4
+    Networking Approach: https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html
+    Database & Persistence: Saving progress, account system?
+    AI for Solo Play (Optional): Will there be bot players?
+
+8. Monetization Strategy (If Applicable)
+
+	Free to play among friends
+    Streamline adding expansion pack content and homebrew cards/decks
+    Cosmetic Unlocks for cards, different hero outfits
+
+9. Development Roadmap & Milestones
+
+    Prototype Phase: Basic gameplay loop
+    Alpha Testing: Multiplayer functionality
+    Beta Testing: Balancing and bug fixing
+    Launch & Post-Launch Plans
