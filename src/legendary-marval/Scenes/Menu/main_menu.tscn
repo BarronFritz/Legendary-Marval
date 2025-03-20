@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b7hdsjhm4yw34"]
+[gd_scene load_steps=3 format=3 uid="uid://b7hdsjhm4yw34"]
+
+[ext_resource type="Script" uid="uid://dj8fvl2qwvbjv" path="res://Scenes/Menu/main_menu.gd" id="1_tself"]
+[ext_resource type="Texture2D" uid="uid://cfi8yf7eoe31h" path="res://icon.svg" id="2_7jtkx"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tself")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -22,16 +26,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = 6.0
+offset_right = 31.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="Play" type="Button" parent="Button"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Play"
 
 [node name="Quit" type="Button" parent="Button"]
 custom_minimum_size = Vector2(150, 0)
@@ -39,3 +40,21 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Quit"
+
+[node name="TextureRect" type="HSeparator" parent="Button"]
+custom_minimum_size = Vector2(150, 4)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Button"]
+layout_mode = 2
+
+[node name="Play" type="TextureButton" parent="Button/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_7jtkx")
+
+[connection signal="button_down" from="Button/Quit" to="." method="_on_quit_button_down"]
